@@ -5,7 +5,9 @@
   "main": "dist/mentio.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "coveralls": "gulp coveralls"
+    "coveralls": "gulp coveralls",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,7 @@
   "devDependencies": {
     "connect-livereload": "^0.4.0",
     "express": "^4.1.2",
-    "gulp": "^3.6.2",
+    "gulp": "^4.0.0",
     "gulp-angular-templatecache": "^1.2.1",
     "gulp-bump": "^0.1.11",
     "gulp-concat": "^2.2.0",
@@ -49,5 +51,9 @@
     "karma-script-launcher": "^0.1.0",
     "karma-threshold-reporter": "~0.1.7",
     "open": "0.0.5"
+  },
+  "snyk": true,
+  "dependencies": {
+    "@snyk/protect": "latest"
   }
 }
